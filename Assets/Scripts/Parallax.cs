@@ -40,7 +40,7 @@ public class Parallax : MonoBehaviour
         leftBckg = rightBckg;
 
         rightBckg--;
-        rightBckg = mod(rightBckg, (backgrounds.Length));
+        rightBckg = mod(rightBckg, backgrounds.Length);
     }
 
     private void ScrollRight()
@@ -52,6 +52,16 @@ public class Parallax : MonoBehaviour
         leftBckg++;
         leftBckg = mod(leftBckg, backgrounds.Length);
 
+    }
+
+    private void Scroll(int direction)
+    {
+        //right = 1 ; left = -1
+
+
+
+        rightBckg = mod(rightBckg, backgrounds.Length);
+        leftBckg  = mod(leftBckg, backgrounds.Length);
     }
 
     private void FixedUpdate()
